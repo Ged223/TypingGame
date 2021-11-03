@@ -17,6 +17,7 @@ public class MessageManager : MonoBehaviour
             {
                 Debug.Log(inputField.GetComponentInChildren<TMPro.TMP_InputField>().text);
                 inputField.text = "";
+                inputField.GetComponentInChildren<TMPro.TMP_InputField>().ActivateInputField();
             }
         });
     }

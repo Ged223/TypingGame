@@ -13,8 +13,11 @@ public class MessageManager : MonoBehaviour
     {
         inputField.onEndEdit.AddListener(val =>
         {
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))//to only submit when press enter, not when unselect for any reason
+            {
                 Debug.Log(inputField.GetComponentInChildren<TMPro.TMP_InputField>().text);
+                inputField.text = "";
+            }
         });
     }
 

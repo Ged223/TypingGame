@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class MessageManager : MonoBehaviour
+public class MessageHandler : MonoBehaviour
 {
     // Start is called before the first frame update
     // [SerializeField] - dont know what this does

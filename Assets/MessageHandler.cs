@@ -53,20 +53,30 @@ public class MessageHandler : MonoBehaviour
         {
             SceneManager.LoadScene("MistakesLevel");
         }
+        else if(message == "/quit" || message == "/q")
+        {
+            Application.Quit();
+        }
+
+    }
+    private void HandleGameOverMenuMessage(string message)
+    {
+        if (message == "/start" || message == "/play" || message == "/restart" || message == "/r")
+        {
+            SceneManager.LoadScene("MistakesLevel");
+        }
+        else if (message == "/menu" || message == "/quit" || message == "/q")
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     private void HandleMistakesLevelMessage(string message)
     {
-        if (message == "/quit")
+        if (message == "/quit" || message == "/q")
         {
             SceneManager.LoadScene("GameOverMenu");
         }
     }
-    private void HandleGameOverMenuMessage(string message)
-    {
-        if (message == "/start" || message == "/play" || message == "/restart")
-        {
-            SceneManager.LoadScene("MistakesLevel");
-        }
-    }
+    
 }

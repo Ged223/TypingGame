@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MessageHandler : MonoBehaviour
 {
@@ -15,9 +16,10 @@ public class MessageHandler : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))//to only submit when press enter, not when unselect for any reason
             {
-                Debug.Log(inputField.GetComponentInChildren<TMPro.TMP_InputField>().text);
+                string message = inputField.GetComponentInChildren<TMPro.TMP_InputField>().text;
                 inputField.text = "";
                 inputField.GetComponentInChildren<TMPro.TMP_InputField>().ActivateInputField();
+                HandleMessage(message);
             }
         });
     }
@@ -26,5 +28,45 @@ public class MessageHandler : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void HandleMessage(string message)
+    {
+        Debug.Log(message);
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            HandleMainMenuMessage(message);
+        }
+        else if(SceneManager.GetActiveScene().name == "MistakesLevel")
+        {
+            HandleMistakesLevelMessage(message);
+        }
+        else if (SceneManager.GetActiveScene().name == "GameOverMenu")
+        {
+            HandleGameOverMenuMessage(message);
+        }
+    }
+
+    private void HandleMainMenuMessage(string message)
+    {
+        if(message == "/start" || message == "/play")
+        {
+            SceneManager.LoadScene("MistakesLevel");
+        }
+    }
+
+    private void HandleMistakesLevelMessage(string message)
+    {
+        if (message == "/quit")
+        {
+            SceneManager.LoadScene("GameOverMenu");
+        }
+    }
+    private void HandleGameOverMenuMessage(string message)
+    {
+        if (message == "/start" || message == "/play" || message == "/restart")
+        {
+            SceneManager.LoadScene("MistakesLevel");
+        }
     }
 }

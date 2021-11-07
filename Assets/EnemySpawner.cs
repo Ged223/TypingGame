@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
     {
         List<Transform> spawnTransforms = new List<Transform>(this.GetComponentsInChildren<Transform>()); //get transforms of all spawnPositions
         spawnTransforms.RemoveAt(0);//remove the parent's (this EnemySpawner's) transform component from the list
-        Transform pickedSpawnTransform = spawnTransforms[Random.Range(0, spawnTransforms.Count-1)];
+        Transform pickedSpawnTransform = spawnTransforms[Random.Range(0, spawnTransforms.Count)];
         return pickedSpawnTransform.position;
     }
     private bool ShouldSpawn()

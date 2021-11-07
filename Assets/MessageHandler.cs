@@ -76,6 +76,27 @@ public class MessageHandler : MonoBehaviour
         if (message == "/quit" || message == "/q")
         {
             SceneManager.LoadScene("GameOverMenu");
+        } 
+        else
+        {
+            destroyTargetedEnemies(message);
+        }
+    }
+
+    private void destroyTargetedEnemies(string message)
+    {
+        List<GameObject> enemiesToRemove = new List<GameObject>();
+        foreach (GameObject enemy in EnemySpawner.spawnedEnemies)
+        {
+            if (enemy.GetComponentInChildren<TextMesh>().text == message)
+            {
+                enemiesToRemove.Add(enemy);
+            }
+        }
+        foreach (GameObject enemy in enemiesToRemove)
+        {
+            EnemySpawner.spawnedEnemies.Remove(enemy);
+            GameObject.Destroy(enemy);
         }
     }
     

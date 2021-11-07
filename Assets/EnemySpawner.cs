@@ -12,9 +12,12 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private float spawnDelay = 10;
 
+    public static List<GameObject> spawnedEnemies;
+
     // Start is called before the first frame update
     void Start()
     {
+        spawnedEnemies = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -30,8 +33,9 @@ public class EnemySpawner : MonoBehaviour
     private void Spawn()
     {
         nextSpawnTime = Time.time + spawnDelay;
-        GameObject spawnedPrefab = Instantiate(enemyPrefab, generateSpawnPosition(), transform.rotation);
-       
+        GameObject spawnedEnemy = Instantiate(enemyPrefab, generateSpawnPosition(), transform.rotation);
+        spawnedEnemy.GetComponentInChildren<TextMesh>().text = TextProvider.instance.getNextWord();
+        spawnedEnemies.Add(spawnedEnemy);
     }
 
     private Vector3 generateSpawnPosition()

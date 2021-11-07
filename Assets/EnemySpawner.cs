@@ -27,7 +27,8 @@ public class EnemySpawner : MonoBehaviour
     private void Spawn()
     {
         nextSpawnTime = Time.time + spawnDelay;
-        Instantiate(enemyPrefab, transform.position, transform.rotation);
+        GameObject spawnedPrefab = Instantiate(enemyPrefab, transform.position, transform.rotation);
+       
     }
 
     private bool ShouldSpawn()

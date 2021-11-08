@@ -45,6 +45,10 @@ public class MessageHandler : MonoBehaviour
         {
             HandleGameOverMenuMessage(message);
         }
+        else if (SceneManager.GetActiveScene().name == "LevelCompleteMenu")
+        {
+            HandleLevelCompleteMenuMessage(message);
+        }
     }
 
     private void HandleMainMenuMessage(string message)
@@ -99,5 +103,19 @@ public class MessageHandler : MonoBehaviour
             GameObject.Destroy(enemy);
         }
     }
-    
+
+    private void HandleLevelCompleteMenuMessage(string message)
+    {
+        if (message == "/quit" || message == "/q")
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        else if(message == "/restart" || message == "/r")
+        {
+            SceneManager.LoadScene("MistakesLevel");
+        }
+        
+    }
+
+
 }

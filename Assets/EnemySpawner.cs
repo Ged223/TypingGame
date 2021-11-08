@@ -33,8 +33,14 @@ public class EnemySpawner : MonoBehaviour
     private void Spawn()
     {
         nextSpawnTime = Time.time + spawnDelay;
+        
+        string nextWord = TextProvider.instance.getNextWord();
+        if (nextWord == "")
+        {
+            return;
+        }
         GameObject spawnedEnemy = Instantiate(enemyPrefab, generateSpawnPosition(), transform.rotation);
-        spawnedEnemy.GetComponentInChildren<TextMesh>().text = TextProvider.instance.getNextWord();
+        spawnedEnemy.GetComponentInChildren<TextMesh>().text = nextWord;
         spawnedEnemies.Add(spawnedEnemy);
     }
 

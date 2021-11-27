@@ -18,4 +18,11 @@ public static class StatsManager
         percentageCorrect = correctCharacters / ((double) totalCharacters / 100);
         Debug.Log("percent correct: " + percentageCorrect);
     }
+
+    public static void reset()
+    {
+        totalCharacters = 0;
+        correctCharacters = 0;
+        percentageCorrect = 0;
+    }
 }

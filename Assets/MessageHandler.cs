@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MessageHandler : MonoBehaviour
 {
     // Start is called before the first frame update
-    // [SerializeField] - dont know what this does
+    [SerializeField]
     public TMPro.TMP_InputField inputField;
 
     private void Start()
@@ -97,11 +97,16 @@ public class MessageHandler : MonoBehaviour
                 enemiesToRemove.Add(enemy);
             }
         }
+
+        StatsManager.handleSubmittedWord(message, (enemiesToRemove.Count >= 1));
+
         foreach (GameObject enemy in enemiesToRemove)
         {
             EnemySpawner.spawnedEnemies.Remove(enemy);
             GameObject.Destroy(enemy);
         }
+
+        
     }
 
     private void HandleLevelCompleteMenuMessage(string message)

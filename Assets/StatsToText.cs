@@ -9,7 +9,6 @@ public class StatsToText : MonoBehaviour
     void Start()
     {
         GetComponentInParent<TextMeshProUGUI>().SetText("Accuracy: "+StatsManager.percentageCorrect);
-        StatsManager.reset();
     }
 
     // Update is called once per frame

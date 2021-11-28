@@ -16,14 +16,24 @@ public class OrbManager : MonoBehaviour
         
     }
 
+    public void sendTarget(GameObject enemy)
+    {
+        GameObject cannon = getNearestOrb(enemy);
+
+        cannon.GetComponent<OrbCannon>().shootAt(enemy);
+    }
+
     public GameObject getNearestOrb(GameObject enemy)
     {
+        float distanceToClosestOrb = Mathf.Infinity;
         Transform[] transforms = GetComponentsInChildren<Transform>();
-        Transform nearest = transforms[0];
+        Transform nearest = this.GetComponentInChildren<OrbCannon>().gameObject.GetComponent<Transform>();
         foreach(Transform orb in transforms)
         {
-            if(Vector3.Distance(orb.position,enemy.transform.position) <= Vector3.Distance(nearest.position, enemy.transform.position))
+            float distanceToOrb = Vector2.Distance(orb.position, enemy.transform.position);
+            if(distanceToOrb < distanceToClosestOrb)
             {
+                distanceToClosestOrb = distanceToOrb;
                 nearest = orb;
             }
         }

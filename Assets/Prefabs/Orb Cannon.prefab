@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1563724172494574067}
   - component: {fileID: 1563724172494574076}
   - component: {fileID: 1563724172494574077}
+  - component: {fileID: 1756714071655758046}
   m_Layer: 0
   m_Name: Orb Cannon
   m_TagString: Untagged
@@ -96,3 +97,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: 1
+--- !u!114 &1756714071655758046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563724172494574078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c8d3f1c4ee4b1b448a484972fc4727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

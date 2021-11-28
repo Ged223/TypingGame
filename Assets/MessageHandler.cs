@@ -10,6 +10,9 @@ public class MessageHandler : MonoBehaviour
     [SerializeField]
     public TMPro.TMP_InputField inputField;
 
+    [SerializeField]
+    private GameObject orbManager;
+
     private void Start()
     {
         inputField.onEndEdit.AddListener(val =>
@@ -103,10 +106,9 @@ public class MessageHandler : MonoBehaviour
         foreach (GameObject enemy in enemiesToRemove)
         {
             EnemySpawner.spawnedEnemies.Remove(enemy);
-            GameObject.Destroy(enemy);
+            orbManager.GetComponent<OrbManager>().sendTarget(enemy);
         }
 
-        
     }
 
     private void HandleLevelCompleteMenuMessage(string message)

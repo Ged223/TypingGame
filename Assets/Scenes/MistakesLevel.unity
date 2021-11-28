@@ -962,6 +962,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4430342040074290142, guid: fc5d2e674e405c843a3cf11e6b3b4943, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 119423119}
+    - target: {fileID: 4430342040074290142, guid: fc5d2e674e405c843a3cf11e6b3b4943, type: 3}
+      propertyPath: orbManager
+      value: 
+      objectReference: {fileID: 119423118}
     - target: {fileID: 4430342040403943696, guid: fc5d2e674e405c843a3cf11e6b3b4943, type: 3}
       propertyPath: m_Name
       value: SceneFoundation

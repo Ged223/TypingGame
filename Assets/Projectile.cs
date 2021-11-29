@@ -11,10 +11,9 @@ public class Projectile : MonoBehaviour
 
     private Vector2 targetPosition;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        targetPosition = target.transform.position;
+        target = null;
     }
 
     // Update is called once per frame
@@ -30,6 +29,9 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("a projectile hit something");
+        GameObject.Destroy(collision.gameObject);
+        GameObject.Destroy(this.gameObject);
+        
     }
 
     public static void LookAt2D(Transform transform, Vector2 target)

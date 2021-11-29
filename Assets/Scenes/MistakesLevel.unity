@@ -884,13 +884,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1563724172494574076, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
+      propertyPath: m_Color.b
+      value: 0.94200134
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563724172494574076, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563724172494574076, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1563724172494574077, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
       propertyPath: spawnPosition
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1563724172494574078, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
       propertyPath: m_Name
-      value: Orb Cannon (1)
+      value: Orb Cannon 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563724172494574078, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
+      propertyPath: m_TagString
+      value: Orb2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
@@ -945,9 +961,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1563724172494574076, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563724172494574076, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
+      propertyPath: m_Color.g
+      value: 0.449203
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563724172494574076, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1563724172494574078, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
       propertyPath: m_Name
-      value: Orb Cannon
+      value: Orb Cannon 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563724172494574078, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}
+      propertyPath: m_TagString
+      value: Orb1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c5b186a28db6904a9ca8f9fa8a9c5b0, type: 3}

@@ -25,18 +25,20 @@ public class OrbManager : MonoBehaviour
 
     public GameObject getNearestOrb(GameObject enemy)
     {
-        float distanceToClosestOrb = Mathf.Infinity;
-        Transform[] transforms = GetComponentsInChildren<Transform>();
-        Transform nearest = this.GetComponentInChildren<OrbCannon>().gameObject.GetComponent<Transform>();
-        foreach(Transform orb in transforms)
+        GameObject orb1Object = GameObject.FindGameObjectWithTag("Orb1");
+        GameObject orb2Object = GameObject.FindGameObjectWithTag("Orb2");
+
+        OrbCannon orb1 = orb1Object.GetComponent<OrbCannon>();
+        OrbCannon orb2 = orb2Object.GetComponent<OrbCannon>();
+
+        Vector2 orb1Position = orb1Object.transform.position;
+        Vector2 orb2Position = orb2Object.transform.position;
+        if (Vector2.Distance(orb1Position,enemy.transform.position) > Vector2.Distance(orb2Position, enemy.transform.position))
         {
-            float distanceToOrb = Vector2.Distance(orb.position, enemy.transform.position);
-            if(distanceToOrb < distanceToClosestOrb)
-            {
-                distanceToClosestOrb = distanceToOrb;
-                nearest = orb;
-            }
+            return orb2Object;
+        } else
+        {
+            return orb1Object;
         }
-        return nearest.gameObject;
     }
 }

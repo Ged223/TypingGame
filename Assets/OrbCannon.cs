@@ -12,7 +12,7 @@ public class OrbCannon : MonoBehaviour
 
     public void shootAt(GameObject enemy)
     {
-        Debug.Log("OrbCannon shooting at enemy");
+        Debug.Log("OrbCannon "+this.tag+" shooting at enemy");
         GameObject.Destroy(enemy);
     }
     // Update is called once per frame

@@ -29,6 +29,7 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("a projectile hit something");
+        EnemySpawner.spawnedEnemies.Remove(collision.gameObject);
         GameObject.Destroy(collision.gameObject);
         GameObject.Destroy(this.gameObject);
         

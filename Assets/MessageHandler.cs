@@ -105,7 +105,6 @@ public class MessageHandler : MonoBehaviour
 
         foreach (GameObject enemy in enemiesToRemove)
         {
-            EnemySpawner.spawnedEnemies.Remove(enemy);
             orbManager.GetComponent<OrbManager>().sendTarget(enemy);
         }
 

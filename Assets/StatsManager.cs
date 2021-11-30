@@ -6,23 +6,20 @@ public static class StatsManager
 {
     public static int totalCharacters = 0;
     public static int correctCharacters = 0;
-    public static double percentageCorrect = 0;
+    public static int mistakes = 0;
 
     public static void handleSubmittedWord(string message, bool correct)
     {
-        totalCharacters += message.Length;
-        if (correct)
+        if (!correct)
         {
-            correctCharacters += message.Length;
+            mistakes = mistakes + 1;
         }
-        percentageCorrect = correctCharacters / ((double) totalCharacters / 100);
-        Debug.Log("percent correct: " + percentageCorrect);
     }
 
     public static void reset()
     {
         totalCharacters = 0;
         correctCharacters = 0;
-        percentageCorrect = 0;
+        mistakes = 0;
     }
 }

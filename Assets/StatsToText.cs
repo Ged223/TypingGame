@@ -8,7 +8,7 @@ public class StatsToText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInParent<TextMeshProUGUI>().SetText("Accuracy: "+StatsManager.percentageCorrect);
+        GetComponentInParent<TextMeshProUGUI>().SetText("Mistakes: "+StatsManager.mistakes);
     }
 
     // Update is called once per frame

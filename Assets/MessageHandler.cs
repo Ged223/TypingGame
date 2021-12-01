@@ -56,7 +56,7 @@ public class MessageHandler : MonoBehaviour
 
     private void HandleMainMenuMessage(string message)
     {
-        if(message == "/start" || message == "/play")
+        if(message == "/start" || message == "/play" || message == "/p")
         {
             SceneManager.LoadScene("MistakesLevel");
         }
@@ -83,7 +83,10 @@ public class MessageHandler : MonoBehaviour
         if (message == "/quit" || message == "/q")
         {
             SceneManager.LoadScene("GameOverMenu");
-        } 
+        } else if (message == "/r" || message == "/restart")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         else
         {
             destroyTargetedEnemies(message);

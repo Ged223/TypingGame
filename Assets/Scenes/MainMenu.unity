@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Faster words \t\tOFF\t/frw"
+  m_text: "Faster words \t\tOFF\t/faw"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 377387416}
   m_Layer: 5
   m_Name: Text (TMP) (7)
-  m_TagString: Untagged
+  m_TagString: FirstMissionText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 448657423}
   m_Layer: 5
   m_Name: Text (TMP) (3)
-  m_TagString: Untagged
+  m_TagString: FourthMissionText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -676,7 +676,7 @@ GameObject:
   - component: {fileID: 997060496}
   m_Layer: 5
   m_Name: Text (TMP) (1)
-  m_TagString: Untagged
+  m_TagString: SecondMissionText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 1084602370}
   m_Layer: 5
   m_Name: Text (TMP) (2)
-  m_TagString: Untagged
+  m_TagString: ThirdMissionText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1188,7 +1188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "More frequent words \tOFF\t/faw"
+  m_text: "More frequent words \tOFF\t/frw"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1278,7 +1278,7 @@ GameObject:
   - component: {fileID: 1285069272}
   m_Layer: 5
   m_Name: Text (TMP) (5)
-  m_TagString: Untagged
+  m_TagString: FifthMissionText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1442,6 +1442,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f946300ba83551d4ea7245c44dee9d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstMissionDone: 0
+  secondMissionDone: 0
+  thirdMissionDone: 0
+  fourthMissionDone: 0
+  fifthMissionDone: 0
+  frequentWords: 0
+  fasterWords: 0
+  moreWords: 0
 --- !u!1 &1709360312
 GameObject:
   m_ObjectHideFlags: 0

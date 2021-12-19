@@ -38,6 +38,7 @@ public class TextProvider : MonoBehaviour
         {
             if(EnemySpawner.spawnedEnemies.Count == 0)
             {
+                MissionManager.instance.CheckMissionConditions();
                 SceneManager.LoadScene("LevelCompleteMenu");
             }
             else

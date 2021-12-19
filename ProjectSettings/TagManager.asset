@@ -7,6 +7,11 @@ TagManager:
   - EnemySpawner
   - Orb1
   - Orb2
+  - FirstMissionText
+  - SecondMissionText
+  - ThirdMissionText
+  - FourthMissionText
+  - FifthMissionText
   layers:
   - Default
   - TransparentFX

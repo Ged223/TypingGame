@@ -56,6 +56,7 @@ public class MessageHandler : MonoBehaviour
 
     private void HandleMainMenuMessage(string message)
     {
+        
         if(message == "/start" || message == "/play" || message == "/p")
         {
             SceneManager.LoadScene("MistakesLevel");
@@ -63,6 +64,19 @@ public class MessageHandler : MonoBehaviour
         else if(message == "/quit" || message == "/q")
         {
             Application.Quit();
+        }
+        else if(message == "/frw")
+        {
+            MissionManager.instance.frequentWords = !MissionManager.instance.frequentWords;
+        }
+        else if (message == "/faw")
+        {
+            MissionManager.instance.fasterWords = !MissionManager.instance.fasterWords;
+        }
+        else if (message == "/mow")
+        {
+            MissionManager.instance.moreWords = !MissionManager.instance.moreWords;
+
         }
 
     }

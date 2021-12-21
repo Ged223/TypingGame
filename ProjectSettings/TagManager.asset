@@ -12,6 +12,9 @@ TagManager:
   - ThirdMissionText
   - FourthMissionText
   - FifthMissionText
+  - frwText
+  - fawText
+  - mowText
   layers:
   - Default
   - TransparentFX

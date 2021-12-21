@@ -43,6 +43,11 @@ public class MissionManager : MonoBehaviour
             GameObject.FindGameObjectWithTag("ThirdMissionText").GetComponent<TMPro.TMP_Text>().SetText("Finish with faster words.\nCompleted: " + thirdMissionDone.ToString());
             GameObject.FindGameObjectWithTag("FourthMissionText").GetComponent<TMPro.TMP_Text>().SetText("Finish with more words.\nCompleted: " + fourthMissionDone.ToString());
             GameObject.FindGameObjectWithTag("FifthMissionText").GetComponent<TMPro.TMP_Text>().SetText("Complete all of the above missions in a single attempt.\nCompleted: " + fifthMissionDone.ToString());
+
+            GameObject.FindGameObjectWithTag("frwText").GetComponent<TMPro.TMP_Text>().SetText("Frequent words     /frw\n" + frequentWords.ToString());
+            GameObject.FindGameObjectWithTag("fawText").GetComponent<TMPro.TMP_Text>().SetText("Fast words            /faw\n" + fasterWords.ToString());
+            GameObject.FindGameObjectWithTag("mowText").GetComponent<TMPro.TMP_Text>().SetText("More words           /mow\n" + moreWords.ToString());
+
         }
     }
 

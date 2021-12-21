@@ -450,7 +450,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Finish with 0 mistakes.
 
-    Completed: NO'
+    Completed: False'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -586,7 +586,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Finish with more words.
 
-    Completed: NO'
+    Completed: False'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -722,7 +722,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Finish with more frequent words.
 
-    Completed: NO'
+    Completed: False'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -858,7 +858,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Finish with faster words.
 
-    Completed: NO'
+    Completed: False'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1322,7 +1322,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Complete all of the above missions in a single attempt. \nCompleted: NO"
+  m_text: "Complete all of the above missions in a single attempt. \nCompleted: False"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

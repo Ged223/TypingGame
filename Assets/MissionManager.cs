@@ -16,12 +16,16 @@ public class MissionManager : MonoBehaviour
     public bool moreWords = false;
     private void Awake()
     {
-
-        if (instance != null)
-            GameObject.Destroy(instance);
-        else
-            instance = this;
         DontDestroyOnLoad(this);
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Object.Destroy(gameObject);
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -34,7 +38,11 @@ public class MissionManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
-            //TODO HERE at the loading of main menu, update the text to display completeness of missions
+            GameObject.FindGameObjectWithTag("FirstMissionText").GetComponent<TMPro.TMP_Text>().SetText("Finish with 0 mistakes.\nCompleted: " + firstMissionDone.ToString());
+            GameObject.FindGameObjectWithTag("SecondMissionText").GetComponent<TMPro.TMP_Text>().SetText("Finish with more frequent words.\nCompleted: " + secondMissionDone.ToString());
+            GameObject.FindGameObjectWithTag("ThirdMissionText").GetComponent<TMPro.TMP_Text>().SetText("Finish with faster words.\nCompleted: " + thirdMissionDone.ToString());
+            GameObject.FindGameObjectWithTag("FourthMissionText").GetComponent<TMPro.TMP_Text>().SetText("Finish with more words.\nCompleted: " + fourthMissionDone.ToString());
+            GameObject.FindGameObjectWithTag("FifthMissionText").GetComponent<TMPro.TMP_Text>().SetText("Complete all of the above missions in a single attempt.\nCompleted: " + fifthMissionDone.ToString());
         }
     }
 

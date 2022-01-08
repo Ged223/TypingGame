@@ -15,8 +15,17 @@ public class TextProvider : MonoBehaviour
         else
             instance = this;
         //DontDestroyOnLoad(this); //uncomment this if you want to keep this script when another scene loads
-
-        wordsInList = new List<string>(wordsInSentences.Split(' '));
+        if(MissionManager.instance.moreWords == true)
+        {
+            wordsInList = new List<string>(wordsInSentences.Split(' '));
+            wordsInList.AddRange(wordsInSentences.Split(' '));
+            wordsInList.AddRange(wordsInSentences.Split(' '));
+        }
+        else
+        {
+            wordsInList = new List<string>(wordsInSentences.Split(' '));
+        }
+        
         nextWordIndex = 0;
     }
 

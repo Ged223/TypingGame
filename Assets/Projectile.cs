@@ -19,6 +19,10 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target == null)
+        {
+            GameObject.Destroy(this.gameObject);
+        }
         float step = speed * Time.deltaTime;
         targetPosition = target.transform.position;
         LookAt2D(this.transform,targetPosition);

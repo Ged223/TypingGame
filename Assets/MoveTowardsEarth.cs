@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveTowardsEarth : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 0.1f;
+    private float speed = 10f;
    
     private Vector2 target;
 
@@ -18,6 +18,14 @@ public class MoveTowardsEarth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (MissionManager.instance.fasterWords == true)
+        {
+            speed = 15f;
+        }
+        else
+        {
+            speed = 10f;
+        }
         float step = speed * Time.deltaTime;
 
         // move sprite towards the target location

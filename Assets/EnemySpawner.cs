@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject enemyPrefab;
 
     [SerializeField]
-    private float spawnDelay = 2;
+    private float spawnDelay = 3;
 
     public static List<GameObject> spawnedEnemies;
 
@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            spawnDelay = 2;
+            spawnDelay = 3;
         }
             if (ShouldSpawn())
             {

@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject enemyPrefab;
 
     [SerializeField]
-    private float spawnDelay = 10;
+    private float spawnDelay = 2;
 
     public static List<GameObject> spawnedEnemies;
 
@@ -23,6 +23,14 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (MissionManager.instance.frequentWords == true)
+        {
+            spawnDelay = 1;
+        }
+        else
+        {
+            spawnDelay = 2;
+        }
             if (ShouldSpawn())
             {
                 Spawn();

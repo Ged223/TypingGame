@@ -12,6 +12,13 @@ public class MoveTowardsEarth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Vector3 scaleChange = new Vector3(0.5f, 0.5f, 0);
+        int wordLength = GetComponentInChildren<TextMesh>().text.Length;
+        for (int i = 0; i < wordLength; i++)
+        {
+            gameObject.transform.localScale += scaleChange;               
+        }
+       
         target = new Vector2(0.0f, 0.0f);
     }
 

@@ -15,6 +15,7 @@ TagManager:
   - frwText
   - fawText
   - mowText
+  - sfxText
   layers:
   - Default
   - TransparentFX

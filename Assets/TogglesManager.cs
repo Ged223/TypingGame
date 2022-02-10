@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MissionManager : MonoBehaviour
+public class TogglesManager : MonoBehaviour
 {
-    public static MissionManager instance;
+    public static TogglesManager instance;
     public bool firstMissionDone = false;
     public bool secondMissionDone = false;
     public bool thirdMissionDone = false;
@@ -14,6 +14,7 @@ public class MissionManager : MonoBehaviour
     public bool frequentWords = false;
     public bool fasterWords = false;
     public bool moreWords = false;
+    public bool soundEffects = true;
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -30,7 +31,7 @@ public class MissionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -46,7 +47,8 @@ public class MissionManager : MonoBehaviour
 
             GameObject.FindGameObjectWithTag("frwText").GetComponent<TMPro.TMP_Text>().SetText("Frequent words     /frw\n" + frequentWords.ToString());
             GameObject.FindGameObjectWithTag("fawText").GetComponent<TMPro.TMP_Text>().SetText("Fast words            /faw\n" + fasterWords.ToString());
-            GameObject.FindGameObjectWithTag("mowText").GetComponent<TMPro.TMP_Text>().SetText("More words           /mow\n" + moreWords.ToString());
+            GameObject.FindGameObjectWithTag("mowText").GetComponent<TMPro.TMP_Text>().SetText("More words           /mow\n" + moreWords.ToString());          
+            GameObject.FindGameObjectWithTag("sfxText").GetComponent<TMPro.TMP_Text>().SetText("Sound Effects	/sfx\n" + soundEffects.ToString());
 
         }
     }

@@ -15,7 +15,6 @@ public class OrbCannon : MonoBehaviour
 
     public void shootAt(GameObject enemy)
     {
-        Debug.Log("OrbCannon " + this.tag + " shooting at enemy");
         SoundManager.PlaySound(SoundManager.Sound.Shot);
         GameObject projectile = GameObject.Instantiate(projectilePrefab, transform.position, transform.rotation);
         projectile.GetComponent<Projectile>().target = enemy;

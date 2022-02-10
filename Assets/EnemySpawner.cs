@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (MissionManager.instance.frequentWords == true)
+        if (TogglesManager.instance.frequentWords == true)
         {
             spawnDelay = 1;
         }

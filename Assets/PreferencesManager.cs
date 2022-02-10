@@ -12,6 +12,7 @@ public class PreferencesManager : MonoBehaviour
     const string frw = "frw";
     const string faw = "faw";
     const string mow = "mow";
+    const string sfx = "sfx";
     void Start()
     {
         LoadPrefs();
@@ -24,25 +25,27 @@ public class PreferencesManager : MonoBehaviour
 
     public void SavePrefs()
     {
-        PlayerPrefs.SetInt(first, (MissionManager.instance.firstMissionDone ? 1 : 0));
-        PlayerPrefs.SetInt(second, (MissionManager.instance.secondMissionDone ? 1 : 0));
-        PlayerPrefs.SetInt(third, (MissionManager.instance.thirdMissionDone ? 1 : 0));
-        PlayerPrefs.SetInt(fourth, (MissionManager.instance.fourthMissionDone ? 1 : 0));
-        PlayerPrefs.SetInt(fifth, (MissionManager.instance.fifthMissionDone ? 1 : 0));
-        PlayerPrefs.SetInt(frw, (MissionManager.instance.frequentWords ? 1 : 0));
-        PlayerPrefs.SetInt(faw, (MissionManager.instance.fasterWords ? 1 : 0));
-        PlayerPrefs.SetInt(mow, (MissionManager.instance.moreWords ? 1 : 0));
+        PlayerPrefs.SetInt(first, (TogglesManager.instance.firstMissionDone ? 1 : 0));
+        PlayerPrefs.SetInt(second, (TogglesManager.instance.secondMissionDone ? 1 : 0));
+        PlayerPrefs.SetInt(third, (TogglesManager.instance.thirdMissionDone ? 1 : 0));
+        PlayerPrefs.SetInt(fourth, (TogglesManager.instance.fourthMissionDone ? 1 : 0));
+        PlayerPrefs.SetInt(fifth, (TogglesManager.instance.fifthMissionDone ? 1 : 0));
+        PlayerPrefs.SetInt(frw, (TogglesManager.instance.frequentWords ? 1 : 0));
+        PlayerPrefs.SetInt(faw, (TogglesManager.instance.fasterWords ? 1 : 0));
+        PlayerPrefs.SetInt(mow, (TogglesManager.instance.moreWords ? 1 : 0));
+        PlayerPrefs.SetInt(sfx, (TogglesManager.instance.soundEffects ? 1 : 0));
     }
 
     public void LoadPrefs()
     {
-        MissionManager.instance.firstMissionDone = (PlayerPrefs.GetInt(first) != 0);
-        MissionManager.instance.secondMissionDone = (PlayerPrefs.GetInt(second) != 0);
-        MissionManager.instance.thirdMissionDone = (PlayerPrefs.GetInt(third) != 0);
-        MissionManager.instance.fourthMissionDone = (PlayerPrefs.GetInt(fourth) != 0);
-        MissionManager.instance.fifthMissionDone = (PlayerPrefs.GetInt(fifth) != 0);
-        MissionManager.instance.frequentWords = (PlayerPrefs.GetInt(frw) != 0);
-        MissionManager.instance.fasterWords = (PlayerPrefs.GetInt(faw) != 0);
-        MissionManager.instance.moreWords = (PlayerPrefs.GetInt(mow) != 0);
+        TogglesManager.instance.firstMissionDone = (PlayerPrefs.GetInt(first) != 0);
+        TogglesManager.instance.secondMissionDone = (PlayerPrefs.GetInt(second) != 0);
+        TogglesManager.instance.thirdMissionDone = (PlayerPrefs.GetInt(third) != 0);
+        TogglesManager.instance.fourthMissionDone = (PlayerPrefs.GetInt(fourth) != 0);
+        TogglesManager.instance.fifthMissionDone = (PlayerPrefs.GetInt(fifth) != 0);
+        TogglesManager.instance.frequentWords = (PlayerPrefs.GetInt(frw) != 0);
+        TogglesManager.instance.fasterWords = (PlayerPrefs.GetInt(faw) != 0);
+        TogglesManager.instance.moreWords = (PlayerPrefs.GetInt(mow) != 0);
+        TogglesManager.instance.soundEffects = (PlayerPrefs.GetInt(sfx) != 0);
     }
 }

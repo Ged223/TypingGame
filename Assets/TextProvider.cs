@@ -43,7 +43,7 @@ public class TextProvider : MonoBehaviour
         //DontDestroyOnLoad(this); //uncomment this if you want to keep this script when another scene loads
         textChosenIndex = Random.Range(0, textsAvailable.Length);
         wordsInSentences = textsAvailable[textChosenIndex];
-        if (MissionManager.instance.moreWords == true)
+        if (TogglesManager.instance.moreWords == true)
         {
             wordsInList = new List<string>(wordsInSentences.Split(' '));
             wordsInList.AddRange(wordsInSentences.Split(' '));
@@ -75,7 +75,7 @@ public class TextProvider : MonoBehaviour
         {
             if (EnemySpawner.spawnedEnemies.Count == 0)
             {
-                MissionManager.instance.CheckMissionConditions();
+                TogglesManager.instance.CheckMissionConditions();
                 SceneManager.LoadScene("LevelCompleteMenu");
             }
             else

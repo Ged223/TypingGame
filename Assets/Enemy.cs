@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
         }
 
         //adjust speed based on difficulty options
-        if (MissionManager.instance.fasterWords == true)
+        if (TogglesManager.instance.fasterWords == true)
         {
             speed = 15f;
         }

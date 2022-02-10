@@ -17,13 +17,22 @@ public static class SoundManager
     private static AudioSource oneShotAudioSource;
     public static void PlaySound(Sound sound)
     {
-        if (oneShotGameObject == null)
+        if (ShouldPlaySound())
         {
-            oneShotGameObject = new GameObject("One Shot Sound");
-            oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
-            GameObject.DontDestroyOnLoad(oneShotGameObject);
+            if (oneShotGameObject == null)
+            {
+                oneShotGameObject = new GameObject("One Shot Sound");
+                oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
+                GameObject.DontDestroyOnLoad(oneShotGameObject);
+            }
+            oneShotAudioSource.PlayOneShot(GetAudioClip(sound));
         }
-        oneShotAudioSource.PlayOneShot(GetAudioClip(sound));
+        
+    }
+
+    private static bool ShouldPlaySound()
+    {
+        return TogglesManager.instance.soundEffects;
     }
 
     private static AudioClip GetAudioClip(Sound sound)

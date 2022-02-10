@@ -35,7 +35,6 @@ public class MessageHandler : MonoBehaviour
 
     private void HandleMessage(string message)
     {
-        Debug.Log(message);
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             SoundManager.PlaySound(SoundManager.Sound.CommandSubmitted);
@@ -70,15 +69,20 @@ public class MessageHandler : MonoBehaviour
         }
         else if (message == "/frw")
         {
-            MissionManager.instance.frequentWords = !MissionManager.instance.frequentWords;
+            TogglesManager.instance.frequentWords = !TogglesManager.instance.frequentWords;
         }
         else if (message == "/faw")
         {
-            MissionManager.instance.fasterWords = !MissionManager.instance.fasterWords;
+            TogglesManager.instance.fasterWords = !TogglesManager.instance.fasterWords;
         }
         else if (message == "/mow")
         {
-            MissionManager.instance.moreWords = !MissionManager.instance.moreWords;
+            TogglesManager.instance.moreWords = !TogglesManager.instance.moreWords;
+
+        }
+        else if (message == "/sfx")
+        {
+            TogglesManager.instance.soundEffects = !TogglesManager.instance.soundEffects;
 
         }
 

@@ -13,7 +13,7 @@ public class PreferencesManager : MonoBehaviour
     const string faw = "faw";
     const string mow = "mow";
     void Start()
-    {     
+    {
         LoadPrefs();
     }
 
@@ -35,7 +35,7 @@ public class PreferencesManager : MonoBehaviour
     }
 
     public void LoadPrefs()
-    {     
+    {
         MissionManager.instance.firstMissionDone = (PlayerPrefs.GetInt(first) != 0);
         MissionManager.instance.secondMissionDone = (PlayerPrefs.GetInt(second) != 0);
         MissionManager.instance.thirdMissionDone = (PlayerPrefs.GetInt(third) != 0);

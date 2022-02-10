@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
         }
         float step = speed * Time.deltaTime;
         targetPosition = target.transform.position;
-        LookAt2D(this.transform,targetPosition);
+        LookAt2D(this.transform, targetPosition);
         // move sprite towards the target location
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, step);
     }
@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
         EnemySpawner.spawnedEnemies.Remove(collision.gameObject);
         GameObject.Destroy(collision.gameObject);
         GameObject.Destroy(this.gameObject);
-        
+
     }
 
     public static void LookAt2D(Transform transform, Vector2 target)

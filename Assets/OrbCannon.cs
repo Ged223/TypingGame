@@ -10,18 +10,19 @@ public class OrbCannon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void shootAt(GameObject enemy)
     {
-        Debug.Log("OrbCannon "+this.tag+" shooting at enemy");
+        Debug.Log("OrbCannon " + this.tag + " shooting at enemy");
+        SoundManager.PlaySound(SoundManager.Sound.Shot);
         GameObject projectile = GameObject.Instantiate(projectilePrefab, transform.position, transform.rotation);
         projectile.GetComponent<Projectile>().target = enemy;
     }
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

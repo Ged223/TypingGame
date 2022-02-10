@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class StatsToText : MonoBehaviour
+public class LevelComplete : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInParent<TextMeshProUGUI>().SetText("Mistakes: " + StatsManager.mistakes);
+        SoundManager.PlaySound(SoundManager.Sound.LevelComplete);
     }
 
     // Update is called once per frame

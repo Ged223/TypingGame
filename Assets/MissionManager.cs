@@ -30,13 +30,13 @@ public class MissionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(SceneManager.GetActiveScene().name == "MainMenu")
+        if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             GameObject.FindGameObjectWithTag("FirstMissionText").GetComponent<TMPro.TMP_Text>().SetText("Finish with 0 mistakes.\nCompleted: " + firstMissionDone.ToString());
             GameObject.FindGameObjectWithTag("SecondMissionText").GetComponent<TMPro.TMP_Text>().SetText("Finish with more frequent words.\nCompleted: " + secondMissionDone.ToString());

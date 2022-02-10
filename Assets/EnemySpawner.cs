@@ -31,17 +31,17 @@ public class EnemySpawner : MonoBehaviour
         {
             spawnDelay = 2;
         }
-            if (ShouldSpawn())
-            {
-                Spawn();
-            }
-        
+        if (ShouldSpawn())
+        {
+            Spawn();
+        }
+
     }
 
     private void Spawn()
     {
         nextSpawnTime = Time.time + spawnDelay;
-        
+
         string nextWord = TextProvider.instance.getNextWord();
         if (nextWord == "")
         {

@@ -30,42 +30,45 @@ public class MessageHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void HandleMessage(string message)
     {
         Debug.Log(message);
-        if(SceneManager.GetActiveScene().name == "MainMenu")
+        if (SceneManager.GetActiveScene().name == "MainMenu")
         {
+            SoundManager.PlaySound(SoundManager.Sound.CommandSubmitted);
             HandleMainMenuMessage(message);
         }
-        else if(SceneManager.GetActiveScene().name == "MistakesLevel")
+        else if (SceneManager.GetActiveScene().name == "MistakesLevel")
         {
             HandleMistakesLevelMessage(message);
         }
         else if (SceneManager.GetActiveScene().name == "GameOverMenu")
         {
+            SoundManager.PlaySound(SoundManager.Sound.CommandSubmitted);
             HandleGameOverMenuMessage(message);
         }
         else if (SceneManager.GetActiveScene().name == "LevelCompleteMenu")
         {
+            SoundManager.PlaySound(SoundManager.Sound.CommandSubmitted);
             HandleLevelCompleteMenuMessage(message);
         }
     }
 
     private void HandleMainMenuMessage(string message)
     {
-        
-        if(message == "/start" || message == "/play" || message == "/p")
+
+        if (message == "/start" || message == "/play" || message == "/p")
         {
             SceneManager.LoadScene("MistakesLevel");
         }
-        else if(message == "/quit" || message == "/q")
+        else if (message == "/quit" || message == "/q")
         {
             Application.Quit();
         }
-        else if(message == "/frw")
+        else if (message == "/frw")
         {
             MissionManager.instance.frequentWords = !MissionManager.instance.frequentWords;
         }
@@ -96,15 +99,31 @@ public class MessageHandler : MonoBehaviour
     {
         if (message == "/quit" || message == "/q")
         {
+            SoundManager.PlaySound(SoundManager.Sound.CommandSubmitted);
             SceneManager.LoadScene("GameOverMenu");
-        } else if (message == "/r" || message == "/restart")
+        }
+        else if (message == "/r" || message == "/restart")
         {
+            SoundManager.PlaySound(SoundManager.Sound.CommandSubmitted);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else
         {
             destroyTargetedEnemies(message);
         }
+    }
+
+    private void HandleLevelCompleteMenuMessage(string message)
+    {
+        if (message == "/quit" || message == "/q")
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        else if (message == "/restart" || message == "/r")
+        {
+            SceneManager.LoadScene("MistakesLevel");
+        }
+
     }
 
     private void destroyTargetedEnemies(string message)
@@ -127,18 +146,6 @@ public class MessageHandler : MonoBehaviour
 
     }
 
-    private void HandleLevelCompleteMenuMessage(string message)
-    {
-        if (message == "/quit" || message == "/q")
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
-        else if(message == "/restart" || message == "/r")
-        {
-            SceneManager.LoadScene("MistakesLevel");
-        }
-        
-    }
 
 
 }

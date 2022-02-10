@@ -12,6 +12,7 @@ public static class StatsManager
     {
         if (!correct)
         {
+            SoundManager.PlaySound(SoundManager.Sound.Mistake);
             mistakes = mistakes + 1;
         }
     }

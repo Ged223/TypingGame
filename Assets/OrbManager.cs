@@ -7,13 +7,13 @@ public class OrbManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void sendTarget(GameObject enemy)
@@ -33,10 +33,11 @@ public class OrbManager : MonoBehaviour
 
         Vector2 orb1Position = orb1Object.transform.position;
         Vector2 orb2Position = orb2Object.transform.position;
-        if (Vector2.Distance(orb1Position,enemy.transform.position) > Vector2.Distance(orb2Position, enemy.transform.position))
+        if (Vector2.Distance(orb1Position, enemy.transform.position) > Vector2.Distance(orb2Position, enemy.transform.position))
         {
             return orb2Object;
-        } else
+        }
+        else
         {
             return orb1Object;
         }

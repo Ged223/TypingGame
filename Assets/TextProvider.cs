@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class TextProvider : MonoBehaviour
 {
     public static TextProvider instance;
-    private string[] textsAvailable = 
+    private string[] textsAvailable =
         {
         //source of texts: https://typeracerdata.com/texts?texts=full&sort=length
         "A straight line is said to have been cut in extreme and mean ratio when, as the whole line is to the greater segment, so is the greater to the lesser.",
@@ -35,7 +35,7 @@ public class TextProvider : MonoBehaviour
     private int textChosenIndex;
     void Awake()
     {
-        
+
         if (instance != null)
             GameObject.Destroy(instance);
         else
@@ -66,14 +66,14 @@ public class TextProvider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public string getNextWord()
     {
-        if(nextWordIndex >= wordsInList.Count)
+        if (nextWordIndex >= wordsInList.Count)
         {
-            if(EnemySpawner.spawnedEnemies.Count == 0)
+            if (EnemySpawner.spawnedEnemies.Count == 0)
             {
                 MissionManager.instance.CheckMissionConditions();
                 SceneManager.LoadScene("LevelCompleteMenu");
@@ -93,5 +93,5 @@ public class TextProvider : MonoBehaviour
         return "";
     }
 
-    
+
 }

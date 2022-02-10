@@ -85,6 +85,11 @@ public class MessageHandler : MonoBehaviour
             TogglesManager.instance.soundEffects = !TogglesManager.instance.soundEffects;
 
         }
+        else if (message == "/clearsave")
+        {
+            SoundManager.PlaySound(SoundManager.Sound.GameOver);
+            PreferencesManager.ClearSave();
+        }
 
     }
     private void HandleGameOverMenuMessage(string message)

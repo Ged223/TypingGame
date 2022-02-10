@@ -23,7 +23,7 @@ public class PreferencesManager : MonoBehaviour
         SavePrefs();
     }
 
-    public void SavePrefs()
+    public static void SavePrefs()
     {
         PlayerPrefs.SetInt(first, (TogglesManager.instance.firstMissionDone ? 1 : 0));
         PlayerPrefs.SetInt(second, (TogglesManager.instance.secondMissionDone ? 1 : 0));
@@ -33,10 +33,11 @@ public class PreferencesManager : MonoBehaviour
         PlayerPrefs.SetInt(frw, (TogglesManager.instance.frequentWords ? 1 : 0));
         PlayerPrefs.SetInt(faw, (TogglesManager.instance.fasterWords ? 1 : 0));
         PlayerPrefs.SetInt(mow, (TogglesManager.instance.moreWords ? 1 : 0));
-        PlayerPrefs.SetInt(sfx, (TogglesManager.instance.soundEffects ? 1 : 0));
+        PlayerPrefs.SetInt(sfx, (TogglesManager.instance.soundEffects ? 0 : 1));//inverted storage, 0 is true
+        //because default value needs to be true, and if loaded without existing save file, it loads 0(which now means true)
     }
 
-    public void LoadPrefs()
+    public static void LoadPrefs()
     {
         TogglesManager.instance.firstMissionDone = (PlayerPrefs.GetInt(first) != 0);
         TogglesManager.instance.secondMissionDone = (PlayerPrefs.GetInt(second) != 0);
@@ -46,6 +47,13 @@ public class PreferencesManager : MonoBehaviour
         TogglesManager.instance.frequentWords = (PlayerPrefs.GetInt(frw) != 0);
         TogglesManager.instance.fasterWords = (PlayerPrefs.GetInt(faw) != 0);
         TogglesManager.instance.moreWords = (PlayerPrefs.GetInt(mow) != 0);
-        TogglesManager.instance.soundEffects = (PlayerPrefs.GetInt(sfx) != 0);
+        TogglesManager.instance.soundEffects = (PlayerPrefs.GetInt(sfx) == 0);//inverted storage, 0 is true
+        //because default value needs to be true, and if loaded without existing save file, it loads 0(which now means true)
+    }
+
+    public static void ClearSave()
+    {
+        PlayerPrefs.DeleteAll();
+        LoadPrefs();//load the factory option
     }
 }

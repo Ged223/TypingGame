@@ -17,7 +17,12 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < wordLength; i++)
         {
             gameObject.transform.localScale += scaleChange;
+        }
 
+        //adjust textmesh size to compensate for size change (to make reds visible)
+        if (wordLength <= 3)
+        {
+            gameObject.GetComponentInChildren<TextMesh>().transform.localScale = new Vector3(0.27f, 0.27f, 0.27f);
         }
 
         //adjust speed based on difficulty options
